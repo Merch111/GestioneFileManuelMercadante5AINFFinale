@@ -1,7 +1,10 @@
 package gestionefile;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
+import java.io.BufferedWriter;
 
 /**
  *
@@ -10,7 +13,9 @@ import java.io.IOException;
  */
 
 public class Lettore extends Thread{
-    String nomeFile;
+    String nomeFile = "user.json";
+    String fileOutput = "output.csv";
+    String fileCopia = "copia.csv";
     
     public Lettore(String nomeFile){
         this.nomeFile = nomeFile;
@@ -22,13 +27,14 @@ public class Lettore extends Thread{
      */
     public void leggi(){
         FileReader fr;
+        
         int i; 
         try { 
             //1) apro il file
             fr = new FileReader(nomeFile);
-            //2) leggo carattere per carattere e lo stampo 
-            while ((i=fr.read()) != -1)
-                System.out.print((char) i);
+            
+            //2) leggo carattere per carattere 
+            while ((i=fr.read()) != -1);
             
             System.out.print("\n\r");
             //3) chiudo il file
@@ -38,8 +44,39 @@ public class Lettore extends Thread{
         }
     }
     
+    public void input(){
+        Scanner scanner = new Scanner(System.in);
+        
+         //3) prendo in input l'username
+            System.out.print("Inserisci l'username: ");
+            String username = scanner.nextLine();
+             
+            //4) prendo in input la password
+            System.out.print("Inserisci la password: ");
+            String password = scanner.nextLine();
+        
+        scanner.close();
+        
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileOutput))){
+            writer.write("<username>;<password>");
+        } catch (IOException e){
+            System.out.println("Errore di scrittura");
+        }
+    }
+    
+    public void copia(){
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileOutput)); 
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileCopia))) {
+            
+        } catch (IOException e) {
+            System.out.println("Errore nella copia");
+         }
+    }
+    
 
     public void run(){
         leggi();
+        input();
+        copia();
     }
 }
