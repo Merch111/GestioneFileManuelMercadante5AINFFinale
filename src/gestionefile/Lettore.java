@@ -12,11 +12,9 @@ public class Lettore extends Thread{
     }
     
     public void leggi(){
-        FileReader fr;
-        int i; 
-        try { 
-            //1) apro il file
-            fr = new FileReader(nomeFile);
+        int i;
+        //1) apro il file
+        try(FileReader fr = new FileReader(nomeFile)) { 
             //2) leggo carattere per carattere e lo stampo 
             while ((i=fr.read()) != -1)
                 System.out.print((char) i);
