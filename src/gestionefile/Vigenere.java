@@ -1,11 +1,6 @@
 
 package gestionefile;
 
-/**
- *
- * @author Lorenzo Banella
- * @version 31/01/2024
- */
 public class Vigenere implements Runnable{
 
     private int ir;
@@ -14,14 +9,6 @@ public class Vigenere implements Runnable{
     private int fc;
     private Matrice matrix;
 
-    /**
-     * 
-     * @param ir 
-     * @param fr
-     * @param ic
-     * @param fc
-     * @param matrix 
-     */
     public Vigenere(int ir, int fr, int ic, int fc, Matrice matrix) {
         this.ir = ir;
         this.fr = fr;

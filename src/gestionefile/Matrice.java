@@ -8,29 +8,17 @@ public class Matrice {
     private char mv[][];
     private String verme;
     
-    /**
-     * @param  verme
-     */
 
     public Matrice(String verme) {
         this.mv = new char[26][26];
         this.verme = verme;
     }
     
-    /**
-     * @param  r
-     * @param  c
-     * @param  el
-     */
 
     public void setElemento(int r, int c, int el) {
         this.mv[r][c] = (char) el;
     }
     
-    /**
-     * @param  r
-     * @param  c
-     */
 
     public char getElemento(int r, int c) {
         return mv[r][c];
@@ -49,10 +37,6 @@ public class Matrice {
         }
     }
     
-    /**
-     * @param  fch
-     * @return fch
-     */
 
     public String cifra(String fch){
         String fcf;
@@ -81,11 +65,6 @@ public class Matrice {
 
         return(fcf);
     }
-    
-    /**
-     * @param  fcf
-     * @return fcf
-     */
 
 public String deCifra(String fcf){
         String fch="";

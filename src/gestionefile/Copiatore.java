@@ -10,11 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
 
-/**
- *
- * @author MC
- * @ 12/01/23
- */
 
 public class Copiatore extends Thread{
     String nomeFile;
@@ -26,10 +21,6 @@ public class Copiatore extends Thread{
         this.fileCopiato = fileCopiato;
     }
     
-    /**
-     * Legge il file senza tener conto del tipo di file
-     * e lo mostra in output
-     */
     
     
     public void copiatoreFile() {

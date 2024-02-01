@@ -3,20 +3,11 @@ package gestionefile;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Lorenzo Banella
- * @version 31/01/2024
- */
-
 public class Cifratore {
     private  Matrice matrice;
     private ArrayList<Vigenere> quadranti = new ArrayList<Vigenere>();
     
-    /**
-     * 
-     * @param verme
-     */
+
     
     public Cifratore(String verme){
     this.matrice = new Matrice(verme);
@@ -43,22 +34,12 @@ public class Cifratore {
     }  
     }
     
-    /**
-     * 
-     * @param messaggio
-     * @return fraseCriptata
-     */
     
     public String cifra(String messaggio){
         String fraseCriptata=matrice.cifra(messaggio);
         return fraseCriptata;
     }
     
-    /**
-     * 
-     * @param messaggio
-     * @return fraseDecriptata
-     */
     
     public String decifra(String messaggio){
         String fraseDecriptata=matrice.deCifra(messaggio);
