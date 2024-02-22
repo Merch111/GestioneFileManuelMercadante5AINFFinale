@@ -22,6 +22,7 @@ public class GranPrixGruppo5 {
         Scanner scanner = new Scanner(System.in);
         
         
+        
         System.out.println("Quanti giocatori gareggiano?: ");
         nGiocatori = scanner.nextInt();
         
